@@ -1,6 +1,6 @@
 const LockerService = (function (axios, progress) {
+  // @todo: Move the API_ENDPOINT to a configuration file
   const API_ENDPOINT = "https://us-central1-clarityapps-sandbox.cloudfunctions.net/lockers/";
-  // const API_ENDPOINT = "http://localhost:8010/clarityapps-sandbox/us-central1/lockers/";
 
   const Axios = axios.create({
     baseURL: API_ENDPOINT,
