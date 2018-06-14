@@ -1,0 +1,57 @@
+
+@import "animations";
+
+@import "variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+
+@import "components/flashContainer";
+@import "components/footer";
+@import "components/header";
+@import "components/lockerPreview";
+@import "components/masthead";
+@import "components/prism";
+
+.app {
+  background: $theme-tertiary;
+  min-height: 100vh;
+}
+
+.klerk {
+  font-size: 1.2em;
+  font-family: $font-family-cursive;
+  position: relative;
+
+  .flip {
+    display: inline-block;
+    transform: rotateY(180deg);
+  }
+
+  .super {
+    display: inline-block;
+    background: $theme-primary;
+
+    margin-left: -3em;
+    padding: .125em .5em;
+
+    font-family: $font-family-base;
+    font-size: 0.2em;
+    font-weight: 300;
+
+    border-radius: 3px;
+  }
+}
+
+.font-italic {
+  font-family: $font-family-serif;
+  font-style: italic;
+}
+
+form {
+  textarea, input {
+    font-family: $font-family-monospace;
+  }
+
+  textarea {
+    min-height: 40vh;
+  }
+}

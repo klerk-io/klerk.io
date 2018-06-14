@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Klerk</title>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Merriweather:400,400i|Squada+One" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="app">
+    <header class="sticky-top" id="header">
+      <div class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand klerk" href="/"><span class="flip">k</span>lerk.io</a>
+        <a class="btn btn-outline-light" href="mailto:pbauer@klerk.io">Contact Us</a>
+      </div>
+      <div id="flashContainer"></div>
+      <div id="progress" class="progress" style="display: none;">
+        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </header>
+
+    <section id="masthead">
+      <div class="container align-items-center">
+        <div class="row">
+          <div class="col-md">
+            <div class="text-center m-5">
+              <div class="display-3">
+                <div class="klerk">
+                  <span class="flip">k</span>lerk.io
+                  <span class="super">beta</span>
+                </div>
+              </div>
+              <div class="h3">Cross&nbsp;Cloud&nbsp;Storage for your Serverless Applications.</div>
+              <div class="h4 text-primary font-italic">ephemeral. one-off. secure.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7 pb-3">
+            <form action="#" id="storeLocker">
+              <div class="form-group">
+                <textarea class="form-control" name="data" id="data" required></textarea>
+              </div>
+              <div class="row justify-content-end no-gutters">
+                <div class="col-md-4 col-lg-3">
+                  <button type="submit" class="btn btn-primary btn-block">send</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-5 pb-3">
+            <div id="lockerPreview">
+<pre><code class="language-markdown"># <== Store JSON
+# Write a valid JSON string
+# and you'll get JSON.
+
+```json
+{
+  "foo": "bar"
+}
+```
+
+# <== Store Strings
+# Write anything else
+# and you'll get a string.
+
+Be excellent to each other! – Bill</code></pre>
+              <div id="mediaPreview" class="media"></div>
+            </div>
+            <form action="#" class="mt-3" id="fetchLocker">
+              <div class="input-group">
+                <input type="text" class="form-control" id="id" name="id" placeholder="Paste Klerk Locker ID" required>
+                <div class="input-group-append">
+                  <button type="submit" class="btn btn-primary">fetch</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-dark p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center font-italic">
+            <div class="h4 text-primary text-center font-italic">Try it with a URL!</div>
+          </div>
+        </div>
+        <div class="row justify-content-center pt-3 pb-1">
+          <div class="col-md-6">
+            <form action="#" id="storeUrl">
+              <div class="input-group">
+                <input type="text" class="form-control" id="url" name="url" placeholder="Paste a URL" value="https://bit.ly/2y9Sb5k" required>
+                <div class="input-group-append">
+                  <button type="submit" class="btn btn-primary">send</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="align-items-center">
+      <div class="row">
+        <div class="col-4">
+          Find <strong class="klerk"><span class="flip">k</span>lerk.io</strong> on <a href="https://github.com">Github</a>.
+        </div>
+        <div class="col-8 text-right">
+          Copyright &copy;2018 Taos Software, Inc
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/bundle.js"></script>
+</body>
+</html>
