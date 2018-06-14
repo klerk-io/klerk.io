@@ -115,6 +115,9 @@ let FormController = (function (animate, flash, lockers, prism) {
     } else if (data.indexOf("data:text/html") !== -1) {
       element = document.createElement("iframe");
       element.src = data;
+    } else if (data.indexOf("data:application/pdf") !== -1) {
+      element = document.createElement("iframe");
+      element.src = data;
     } else if (
          data.indexOf("data:text/") !== -1
       || data.indexOf("data:application/") !== -1
