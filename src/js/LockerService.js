@@ -7,7 +7,7 @@ const LockerService = (function (axios, progress) {
     headers: {
       "Content-Type": "text/plain"
     },
-    maxContentLength: 1048487,
+    maxContentLength: 102400,
     onDownloadProgress: progress.update,
     onUploadProgress: progress.update
   });

@@ -5,7 +5,7 @@ const FileService = (function(axios, progress) {
     // headers: {
     //   "Access-Control-Expose-Headers": "Content-Length"
     // },
-    maxContentLength: 786365, // Base64 adds to the filesize (n/3*4)
+    maxContentLength: 768000, // Base64 adds to the filesize (n/3*4)
     maxRedirects: 5,
     onDownloadProgress: progress.update,
     responseType: "blob"
