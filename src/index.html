@@ -15,7 +15,7 @@
         <a class="navbar-brand klerk" href="/"><span class="flip">k</span>lerk.io</a>
         <a class="btn btn-outline-light" href="mailto:pbauer@klerk.io">Contact Us</a>
       </div>
-      <div id="flashContainer"></div>
+      <div id="flash"></div>
       <div id="progress" class="progress" style="display: none;">
         <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
@@ -29,7 +29,7 @@
               <div class="display-3">
                 <div class="klerk">
                   <span class="flip">k</span>lerk.io
-                  <span class="super">beta</span>
+                  <span class="bubble">beta</span>
                 </div>
               </div>
               <div class="h3">Cross&nbsp;Cloud&nbsp;Storage for your Serverless Applications.</div>
@@ -56,8 +56,8 @@
             </form>
           </div>
           <div class="col-md-5 pb-3">
-            <div id="lockerPreview">
-<pre><code class="language-markdown"># Data will be destroyed after you
+            <div id="preview">
+<pre><code class="code language-markdown"># Data will be destroyed after you
 # access it, or after 24 hours.
 
 # Enter URL below to send
@@ -78,7 +78,7 @@
 # Write anything else
 # and you'll get a string.
 Be excellent to each other! – Bill</code></pre>
-              <div id="mediaPreview" class="media"></div>
+              <div class="media"></div>
             </div>
             <form action="#" class="mt-3" id="fetchLocker">
               <div class="input-group">
@@ -102,7 +102,7 @@ Be excellent to each other! – Bill</code></pre>
         </div>
         <div class="row justify-content-center pt-3 pb-1">
           <div class="col-md-6">
-            <form action="#" id="storeUrl">
+            <form action="#" id="urlLocker">
               <div class="input-group">
                 <input type="text" class="form-control" id="url" name="url" placeholder="Paste a URL" value="https://bit.ly/2JBZM1I" required>
                 <div class="input-group-append">

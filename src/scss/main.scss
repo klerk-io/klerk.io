@@ -4,12 +4,12 @@
 @import "variables";
 @import "node_modules/bootstrap/scss/bootstrap";
 
-@import "components/flashContainer";
+@import "components/flash";
 @import "components/footer";
 @import "components/header";
 @import "components/logo";
-@import "components/lockerPreview";
 @import "components/masthead";
+@import "components/preview";
 @import "components/prism";
 
 .app {
