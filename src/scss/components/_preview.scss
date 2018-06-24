@@ -1,6 +1,4 @@
 #preview {
-  overflow-x: hidden;
-  overflow-y: auto;
   height: 40vh;
   background: #343a40;
   border: 1px solid #555;
@@ -22,15 +20,54 @@
   }
 
   .media {
+    display: none;
+    background: #555555;
+    width: 80%;
+    padding: 3px;
+
     position: absolute;
-    max-width: calc(100% - 10px);
     bottom: 5px;
-    left: 5px;
+    right: calc(100% + 5px);
     z-index: 10;
+
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .65);
+
+    &::after {
+      content: "╳";
+      display: block;
+      background: #E74C3C;
+
+      height: 30px;
+      width: 30px;
+      padding: 3px;
+
+      font-size: 10px;
+      line-height: 25px;
+      text-align: center;
+
+      border-radius: 50%;
+
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      cursor: pointer;
+      transition: transform .2s ease-out;
+    }
+
+    &:hover::after {
+      transform: scale(1.025);
+    }
+
+    &.active {
+      display: block;
+    }
 
     img, video, pre, iframe {
       max-width: 100%;
       height: auto;
+      margin: 0;
+      padding: 0;
     }
 
     pre, iframe {
