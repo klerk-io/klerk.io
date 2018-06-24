@@ -30,7 +30,7 @@ export default class FetchController {
 
         // Preview Data
         if (typeof locker.data !== "object" && locker.data.indexOf("data:") !== -1) {
-          preview.setMedia(locker.data);
+          preview.openViewer(locker.data);
         }
       })
       .catch(e => {
