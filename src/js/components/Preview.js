@@ -7,6 +7,8 @@ export default class Preview {
   constructor(selector = "#preview") {
     this._preview = document.querySelector(selector);
     this._preset = this._preview.innerText;
+    this._media = null;
+    this._viewer = this._preview.querySelector(".media");
   }
 
   setJson(content) {
@@ -31,8 +33,21 @@ export default class Preview {
   }
 
   setMedia(data) {
-    // Build media element for mime-type
+    this._media = this.createElement(data);
+    return this;
+  };
+
+  resetMedia() {
+    this.closeViewer();
+
+    this._viewer.innerHTML = "";
+
+    return this;
+  };
+
+  createElement(data) {
     let element;
+
     if (data.indexOf("data:video/") !== -1) {
       element = document.createElement("video");
       element.src = data;
@@ -42,10 +57,10 @@ export default class Preview {
     } else if (data.indexOf("data:image/") !== -1) {
       element = document.createElement("img");
       element.src = data;
-    } else if (data.indexOf("data:text/html") !== -1) {
-      element = document.createElement("iframe");
-      element.src = data;
-    } else if (data.indexOf("data:application/pdf") !== -1) {
+    } else if (
+      data.indexOf("data:text/html") !== -1
+      || data.indexOf("data:application/pdf") !== -1
+    ) {
       element = document.createElement("iframe");
       element.src = data;
     } else if (
@@ -62,22 +77,32 @@ export default class Preview {
       element.src = data;
     }
 
-    // Insert media element in preview container
-    const media = this._preview.querySelector(".media");
-    media.innerHTML = "";
-    media.appendChild(element);
+    return element;
+  }
 
-    animate.pop(media)
+  openViewer(data = null) {
+    if (data) {
+      this.setMedia(data);
+    }
+
+    this._viewer.innerHTML = "";
+    this._viewer.appendChild(this._media);
+    this._viewer.classList.add("active");
+
+    this._viewer.addEventListener("click", e => {
+      e.preventDefault();
+      this.closeViewer();
+    });
+
+    animate.pop(this._viewer);
 
     return this;
-  };
+  }
 
-  resetMedia() {
-    const media = this._preview.querySelector(".media");
-    media.innerHTML = "";
-
+  closeViewer() {
+    this._viewer.classList.remove("active");
     return this;
-  };
+  }
 
   reset() {
     return this
