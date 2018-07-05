@@ -21,7 +21,7 @@
     "watch:html": "watch 'npm run build:html' ./src/index.html",
     "watch": "parallelshell 'npm run watch:js' 'npm run watch:css' 'npm run watch:img' 'npm run watch:html'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "http-server ./dist -p 3000",
+    "start": "http-server ./dist -p 3000",
     "debug": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --user-data-dir=/tmp/chrome-debug --remote-debugging-port=9222"
   },
   "author": "Philipp Bauer <pbauer@klerk.io>",
